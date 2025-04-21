@@ -1,5 +1,7 @@
 package main;
 
+import main.models.Persona;
+
 public class Initial {
 
     public static void main(String[] args) {
@@ -42,5 +44,19 @@ public class Initial {
         // TODO: ↓ Acá podés comenzar a resolver desde el main:
 
         // ¡A codear!
+
+        // CONSIGNA 6:
+        Persona p1 = new Persona("Lautaro", 26, "400051236");
+        Persona p2 = new Persona("Martin", 50, "250051365");
+        System.out.println(p1.mostrarInformacion());
+        System.out.println(p2.mostrarInformacion());
+        // CONSIGNA 7:
+        p1.setEdad(35);
+        p2.setEdad(18);
+        System.out.println(p1.mostrarInformacion());
+        System.out.println(p2.mostrarInformacion());
+        // CONSIGNA 8:
+        System.out.println(p1.getNombre() + (p1.esMayorDeEdad() ? " es Mayor de edad" : "Es menor de edad"));
+        System.out.println(p2.getNombre() + (p2.esMayorDeEdad() ? " es Mayor de edad" : "Es menor de edad"));
     }
 }
