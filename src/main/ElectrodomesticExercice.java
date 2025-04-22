@@ -1,5 +1,7 @@
 package main;
 
+import main.models.Electrodomestico;
+
 public class ElectrodomesticExercice {
     public static void main(String[] args) {
 
@@ -48,6 +50,13 @@ public class ElectrodomesticExercice {
         // Mostrar los resultados por consola.
 
         // ¡Éxitos!
+
+        Electrodomestico e1 = new Electrodomestico("Heladera");
+        Electrodomestico e2 = new Electrodomestico("Lavarropas", 500, "Amarillo", 30, 500);
+        System.out.println("Es de bajo consumo: " + e1.esDeBajoConsumo());
+        System.out.println("Es de bajo consumo: " + e2.esDeBajoConsumo());
+        System.out.println("Es de alta gama: " + e1.esDeAltaGama());
+        System.out.println("Es de alta gama: " + e2.esDeAltaGama());
     }
 }
 

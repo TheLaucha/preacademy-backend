@@ -1,5 +1,9 @@
 package main;
 
+import main.PersonExercise.Persona;
+
+import java.time.LocalDate;
+
 public class PersonExercice {
     public static void main(String[] args) {
 
@@ -66,6 +70,12 @@ public class PersonExercice {
         // Llamar y probar todos los métodos de instancia desde aquí.
 
         // ¡A programar!
+        Persona p1 = new Persona("4153216");
+        Persona p2 = new Persona("846513", "Lautaro", "Espinillo");
+        Persona p3 = new Persona("123454", "Martin", "Palermo", LocalDate.of(1974,11,7));
+        System.out.println(p1.esElDiaDeCumpleanios());
+        System.out.println(p2.puedeVotar());
+        System.out.println(p3.laEdadEsCoherente());
     }
 }
 

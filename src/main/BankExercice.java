@@ -1,5 +1,9 @@
 package main;
 
+import main.models.CajaDeAhorro;
+import main.models.Cuenta;
+import main.models.CuentaCorriente;
+
 public class BankExercice {
     public static void main(String[] args) {
 
@@ -48,6 +52,22 @@ public class BankExercice {
         // TODO: ↓ Acá podés comenzar a resolver desde el main:
 
         // ¡A programar!
+
+        // CONSIGNA 7:
+        CajaDeAhorro ca = new CajaDeAhorro(5000, "1234");
+        CuentaCorriente cc = new CuentaCorriente(10000, "6789");
+        System.out.println("Saldo actual: " + ca.getSaldo());
+        ca.depositar(1000);
+        System.out.println("Saldo actual: " + ca.getSaldo());
+        ca.retirar(5000);
+        System.out.println("Saldo actual: " + ca.getSaldo());
+        ca.retirar(5000);
+        System.out.println("Saldo actual: " + ca.getSaldo());
+        // ca.mostrarSaldo(); mostrarSaldo() es protected
+        Cuenta.transferir(cc,ca,5000);
+        System.out.println("Saldo actual: " + ca.getSaldo());
+        System.out.println("Saldo actual: " + cc.getSaldo());
+
     }
 }
 
