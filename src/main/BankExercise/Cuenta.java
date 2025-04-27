@@ -1,4 +1,4 @@
-package main.models;
+package main.BankExercise;
 
 public abstract class Cuenta {
     private double saldo;
@@ -27,6 +27,8 @@ public abstract class Cuenta {
     public void retirar(double monto){
         if (this.saldo >= monto){
             this.saldo -= monto;
+        }else{
+            throw new IllegalArgumentException("Saldo insuficente");
         }
     }
 
@@ -35,15 +37,13 @@ public abstract class Cuenta {
     }
 
     // CONSIGNA 5:
-    // Crear un método estático llamado transferir(Cuenta origen, Cuenta destino, double monto)
-    // que reste el dinero de la cuenta origen y lo deposite en la cuenta destino.
-    // Si no hay saldo suficiente, debe mostrar un mensaje de error.
+    // ?? Consultar si esta bien que el metodo static este aca.
     public static void transferir(Cuenta origen, Cuenta destino, double monto){
         if(origen.getSaldo() >= monto){
             origen.retirar(monto);
             destino.depositar(monto);
         }else{
-            System.out.println("Error... No hay saldo suficiente...");
+            throw new IllegalArgumentException("No hay saldo suficiente");
         }
     }
 }

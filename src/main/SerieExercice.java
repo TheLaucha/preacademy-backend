@@ -1,5 +1,12 @@
 package main;
 
+import main.SerieExercise.Episodio;
+import main.SerieExercise.Serie;
+import main.SerieExercise.Temporada;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class SerieExercice {
     public static void main(String[] args) {
 
@@ -55,6 +62,44 @@ public class SerieExercice {
         // Mostrar los resultados por consola.
 
         // ¡A programar!
+
+        // Crear algunos episodios
+        Episodio episodio1 = new Episodio("Episodio 1", "Descripción del episodio 1");
+        episodio1.setFueVisto(true);
+        episodio1.setCalificacion(8.5);
+
+        Episodio episodio2 = new Episodio("Episodio 2", "Descripción del episodio 2");
+        episodio2.setFueVisto(true);
+        episodio2.setCalificacion(9.0);
+
+        Episodio episodio3 = new Episodio("Episodio 3", "Descripción del episodio 3");
+        episodio3.setFueVisto(false); // No fue visto
+        episodio3.setCalificacion(55); // Seteo de calificacion no valido
+
+        Episodio episodio4 = new Episodio("Episodio 4", "Descripción del episodio 4");
+        episodio4.setFueVisto(true);
+        episodio4.setCalificacion(7.5);
+
+        // Crear una lista de episodios para la temporada
+        List<Episodio> episodiosTemporada1 = new ArrayList<>();
+        episodiosTemporada1.add(episodio1);
+        episodiosTemporada1.add(episodio2);
+        episodiosTemporada1.add(episodio3);
+        episodiosTemporada1.add(episodio4);
+
+        // Crear la temporada
+        Temporada temporada1 = new Temporada(episodiosTemporada1);
+
+        // Crear la serie
+        List<Temporada> temporadas = new ArrayList<>();
+        temporadas.add(temporada1);
+
+        Serie serie = new Serie("Mi Serie Favorita", "Una descripción breve de la serie", "John Doe", "Acción", temporadas);
+
+        // Prueba de algunos métodos de la clase Serie
+        System.out.println("Promedio de calificación de la serie: " + serie.calificacionPromedioSerie());
+        System.out.println("Total de episodios vistos en la serie: " + serie.totalEpisodiosVistos());
+        System.out.println("¿Vio todo? " + serie.vioTodo());
     }
 }
 

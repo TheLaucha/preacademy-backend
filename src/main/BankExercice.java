@@ -1,8 +1,8 @@
 package main;
 
-import main.models.CajaDeAhorro;
-import main.models.Cuenta;
-import main.models.CuentaCorriente;
+import main.BankExercise.CajaDeAhorro;
+import main.BankExercise.Cuenta;
+import main.BankExercise.CuentaCorriente;
 
 public class BankExercice {
     public static void main(String[] args) {
