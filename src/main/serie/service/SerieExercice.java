@@ -1,4 +1,4 @@
-package main;
+package main.serie.service;
 
 import main.SerieExercise.Episodio;
 import main.SerieExercise.Serie;

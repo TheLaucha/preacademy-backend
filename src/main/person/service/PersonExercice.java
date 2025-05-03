@@ -1,4 +1,4 @@
-package main;
+package main.person.service;
 
 import main.PersonExercise.Persona;
 

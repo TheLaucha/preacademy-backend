@@ -1,4 +1,4 @@
-package main;
+package main.initial.service;
 
 import main.models.Persona;
 

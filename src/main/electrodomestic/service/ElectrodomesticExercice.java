@@ -1,4 +1,4 @@
-package main;
+package main.electrodomestic.service;
 
 import main.models.Electrodomestico;
 

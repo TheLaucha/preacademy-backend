@@ -1,4 +1,4 @@
-package main;
+package main.bank.service;
 
 import main.BankExercise.CajaDeAhorro;
 import main.BankExercise.Cuenta;
