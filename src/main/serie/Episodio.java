@@ -1,4 +1,4 @@
-package main.SerieExercise;
+package main.serie;
 
 public class Episodio {
     private String titulo;

@@ -1,4 +1,4 @@
-package main.BankExercise;
+package main.bank;
 
 public class CuentaCorriente extends Cuenta{
     final private double saldoMaximoPermitido = -1000;

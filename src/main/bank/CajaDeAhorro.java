@@ -1,4 +1,4 @@
-package main.BankExercise;
+package main.bank;
 
 public class CajaDeAhorro extends Cuenta{
 

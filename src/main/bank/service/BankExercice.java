@@ -1,8 +1,8 @@
 package main.bank.service;
 
-import main.BankExercise.CajaDeAhorro;
-import main.BankExercise.Cuenta;
-import main.BankExercise.CuentaCorriente;
+import main.bank.CajaDeAhorro;
+import main.bank.Cuenta;
+import main.bank.CuentaCorriente;
 
 public class BankExercice {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package main.SerieExercise;
+package main.serie;
 
 import java.util.List;
 

@@ -1,5 +1,5 @@
-package main.SerieExercise;
-
+package main.serie;
+import main.serie.Temporada;
 import java.util.List;
 
 public class Serie {

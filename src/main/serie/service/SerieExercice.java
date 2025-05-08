@@ -1,8 +1,8 @@
 package main.serie.service;
 
-import main.SerieExercise.Episodio;
-import main.SerieExercise.Serie;
-import main.SerieExercise.Temporada;
+import main.serie.Episodio;
+import main.serie.Serie;
+import main.serie.Temporada;
 
 import java.util.ArrayList;
 import java.util.List;
