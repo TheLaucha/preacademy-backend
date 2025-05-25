@@ -44,6 +44,9 @@ public class CartService {
         System.out.println("Cantidad total de productos: " + cart.getTotalQuantityProducts());
         System.out.println("Promedio de precios: " + cart.getAverageProductPrice());
 
+        System.out.println("Productos ordenados por precio: ");
+        System.out.println(cart.getProductsOrderByPrice());
+
         // Resumen Final
         cart.showSummary();
     }
