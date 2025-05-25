@@ -2,7 +2,7 @@ package main.primera_evaluacion.model;
 
 public class CartItem {
     private Product product;
-    private int quantity;
+    private int quantity = 1; // Por defecto se inicializa con cantidad 1
 
     public CartItem(){}
 
@@ -42,7 +42,7 @@ public class CartItem {
 
         public Builder quantity(int quantity){
             this.quantity = quantity;
-            return  this;
+            return this;
         }
 
         public CartItem build(){

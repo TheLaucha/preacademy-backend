@@ -27,6 +27,12 @@ public class Coupon {
         this.discountPercentage = discountPercentage;
     }
 
+    @Override
+    public String toString(){
+        return "Codigo: " + this.getCode()
+                + " Porcentaje de descuento: " + this.discountPercentage;
+    }
+
     public static class Builder{
         private String code;
         private double discountPercentage;
