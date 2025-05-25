@@ -135,6 +135,13 @@ public class Cart {
                 : calculateSubtotal() / getTotalQuantityProducts();
     }
 
+    public List<Product> getProductsOrderByPrice(){
+        return this.items.stream()
+                .map(item -> item.getProduct())
+                .sorted()
+                .collect(Collectors.toList());
+    }
+
     public void showSummary(){
         double subtotal = calculateSubtotal();
         double discountPercentage = getFinalDiscountPercentage(subtotal);

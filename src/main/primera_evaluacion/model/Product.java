@@ -2,7 +2,7 @@ package main.primera_evaluacion.model;
 
 import java.util.Locale;
 
-public class Product {
+public class Product implements Comparable<Product>{
     private int id;
     private String name;
     private double price;
@@ -43,6 +43,11 @@ public class Product {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    @Override
+    public int compareTo(Product other){
+        return Double.compare(this.price, other.price);
     }
 
     @Override
