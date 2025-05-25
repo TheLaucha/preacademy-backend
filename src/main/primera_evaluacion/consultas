@@ -1,0 +1,4 @@
+Duda sobre git flow
+Al moverme entre ramas, por ejemplo dev/classes y feature/cart-service
+Cuando trabajo en una y luego en otra, deberia mergearlas para poder ver el codigo que hice en la otra,
+o lo correcto es que no lo vea y tener una rama "padre" donde si tenga las dos ramas mergeadas ?
