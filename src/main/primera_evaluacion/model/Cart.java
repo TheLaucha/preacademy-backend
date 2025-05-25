@@ -9,16 +9,10 @@ public class Cart {
     private Coupon coupon;
     private Client client;
 
-    public Cart(){}
-
-    public Cart(Builder builder){
-        this.items = builder.items;
-        this.coupon = builder.coupon;
-        this.client = builder.client;
-    }
-
-    public List<CartItem> getItems() {
-        return items;
+    public Cart(List<CartItem> items, Coupon coupon, Client client){
+        this.items = items;
+        this.coupon = coupon;
+        this.client = client;
     }
 
     public void setItems(List<CartItem> items) {
@@ -27,6 +21,10 @@ public class Cart {
 
     public Coupon getCoupon() {
         return coupon;
+    }
+
+    public void setCoupon(Coupon coupon){
+        this.coupon = coupon;
     }
 
     public Client getClient() {
@@ -128,7 +126,7 @@ public class Cart {
                 .sum();
     }
 
-    // El promedio deberia ser con o sin el descuento ??
+    /* El promedio deberia ser con o sin el descuento ?? */
     public double getAverageProductPrice(){
         int totalQuantity = getTotalQuantityProducts();
 
@@ -152,30 +150,5 @@ public class Cart {
         System.out.println("Total final: $" + total);
     }
 
-    /* ==== BUILDER ==== */
 
-    public static class Builder{
-        private List<CartItem> items = new ArrayList<>();
-        private Coupon coupon;
-        private Client client;
-
-        public Builder items(List<CartItem> items){
-            this.items = items;
-            return this;
-        }
-
-        public Builder coupon(Coupon coupon){
-            this.coupon = coupon;
-            return this;
-        }
-
-        public Builder client(Client client){
-            this.client = client;
-            return this;
-        }
-
-        public Cart build(){
-            return new Cart(this);
-        }
-    }
 }
