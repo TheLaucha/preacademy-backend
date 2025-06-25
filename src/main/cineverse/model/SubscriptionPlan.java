@@ -1,4 +1,8 @@
 package main.cineverse.model;
 
-public class SubscriptionPlan {
+public enum SubscriptionPlan {
+    FREE,
+    STANDARD,
+    PREMIUM
+
 }
