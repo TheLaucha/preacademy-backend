@@ -1,0 +1,40 @@
+# Archivos compilados y directorios generados
+/bin/
+/build/
+/out/
+.gradle/
+.idea/
+*.jar
+*.war
+*.ear
+*.zip
+*.tar
+*.gz
+*.log
+/target/
+
+# Dependencias
+/lib/
+/libs/
+
+# Archivos de configuración de IDE
+.classpath
+.project
+.settings/
+*.iml
+*.ipr
+*.iws
+*.factorypath
+
+# Archivos de la máquina virtual Java
+*.class
+
+# Otros archivos temporales o generados
+*.swp
+*~
+.#*
+.DS_Store
+Thumbs.db
+
+# Archivos PDF
+*.pdf
