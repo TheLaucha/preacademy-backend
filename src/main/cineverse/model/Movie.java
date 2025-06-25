@@ -19,7 +19,7 @@ public abstract class Movie {
         return title;
     }
 
-    public int getDuration() {
+    public int getDurationInMinutes() {
         return durationInMinutes;
     }
 
