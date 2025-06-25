@@ -26,6 +26,7 @@
 *.iws
 *.factorypath
 
+
 # Archivos de la máquina virtual Java
 *.class
 
