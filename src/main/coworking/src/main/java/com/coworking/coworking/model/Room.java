@@ -8,18 +8,20 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "users")
-public class User {
+public class Room {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
   @Column(nullable = false)
-  private String fullName;
+  private String name;
 
-  @Column(nullable = false, unique = true)
-  private String email;
+  @Column(nullable = false)
+  private int capacity;
 
-  @Enumerated(EnumType.STRING)
-  private Role role;
+  @Column(nullable = false)
+  private String location;
+
+  @Column(nullable = false)
+  private boolean enabled;
 }
