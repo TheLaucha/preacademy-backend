@@ -30,6 +30,14 @@ public class RoomController {
     return ResponseEntity.ok(availableRooms);
   }
 
+  @GetMapping("/{id}")
+  public ResponseEntity<Room> getRoomById(@PathVariable Long id){
+    Room room = roomService.getRoomById(id)
+        .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Sala no encontrada"));
+
+    return ResponseEntity.status(HttpStatus.FOUND).body(room);
+  }
+
   @PostMapping
   public ResponseEntity<Room> createRoom(@Valid @RequestBody RoomRequestDTO dto, @RequestHeader("userId") Long userId){
     User user = userService.findById(userId)

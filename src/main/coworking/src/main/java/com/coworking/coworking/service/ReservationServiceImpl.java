@@ -6,6 +6,7 @@ import com.coworking.coworking.repository.ReservationRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,6 +26,11 @@ public class ReservationServiceImpl implements ReservationService{
   }
 
   @Override
+  public Optional<Reservation> getReservationById(Long id) {
+    return reservationRepo.findById(id);
+  }
+
+  @Override
   public List<Reservation> getAllReservationsByUserId(Long userId) {
     return reservationRepo.findAll().stream()
         .filter(r -> r.getUser().getId().equals(userId))
@@ -38,5 +44,16 @@ public class ReservationServiceImpl implements ReservationService{
 
     reservationToCancel.setStatus(ReservationStatus.CANCELLED);
     reservationRepo.save(reservationToCancel);
+  }
+
+  @Override
+  public boolean isAvailable(Long roomId, LocalDateTime start, LocalDateTime end) {
+    List<Reservation> existingReservations = reservationRepo.findByRoomId(roomId);
+
+    return existingReservations.stream()
+        .noneMatch(r ->
+            start.isBefore(r.getEndDateTime()) &&
+            end.isAfter(r.getStartDateTime())
+        );
   }
 }

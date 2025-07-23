@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -19,6 +19,11 @@ public class RoomServiceImpl implements RoomService{
     return roomRepo.findAll().stream()
         .filter(room -> room.isEnabled())
         .toList();
+  }
+
+  @Override
+  public Optional<Room> getRoomById(Long id){
+    return roomRepo.findById(id);
   }
 
   @Override
