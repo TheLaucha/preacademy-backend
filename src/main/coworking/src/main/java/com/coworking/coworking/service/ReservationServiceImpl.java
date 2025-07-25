@@ -4,7 +4,9 @@ import com.coworking.coworking.model.Reservation;
 import com.coworking.coworking.model.ReservationStatus;
 import com.coworking.coworking.repository.ReservationRepo;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -49,6 +51,10 @@ public class ReservationServiceImpl implements ReservationService{
   @Override
   public boolean isAvailable(Long roomId, LocalDateTime start, LocalDateTime end) {
     List<Reservation> existingReservations = reservationRepo.findByRoomId(roomId);
+
+    if (start.isAfter(end)){
+      throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "La fecha de inicio no puede ser posterior a la fecha de fin");
+    }
 
     return existingReservations.stream()
         .noneMatch(r ->
