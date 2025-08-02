@@ -1,6 +1,6 @@
 package com.segunda_evaluacion.segunda_evaluacion.service;
 
-import com.segunda_evaluacion.segunda_evaluacion.repository.Appointment;
+import com.segunda_evaluacion.segunda_evaluacion.model.Appointment;
 
 import java.time.LocalDate;
 import java.util.List;
