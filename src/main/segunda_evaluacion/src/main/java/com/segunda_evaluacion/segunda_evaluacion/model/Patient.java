@@ -18,10 +18,10 @@ public class Patient {
   private Long id;
 
   @NotBlank(message = "El nombre es obligatorio")
-  private String nombre;
+  private String name;
 
   @NotBlank(message = "El apellido es obligatorio")
-  private String apellido;
+  private String lastname;
 
   @NotBlank(message = "El dni es obligatorio")
   @Size(min = 7, max = 10, message = "El DNI debe tener entre 7 y 10 caracteres")
