@@ -14,7 +14,7 @@ public class GlobalExceptionHandler {
   }
 
   @ExceptionHandler(DatoInvalidoException.class)
-  public ResponseEntity<String> manejarDatoInvaldo(DatoInvalidoException ex){
+  public ResponseEntity<String> manejarDatoInvalido(DatoInvalidoException ex){
     return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
   }
 }
