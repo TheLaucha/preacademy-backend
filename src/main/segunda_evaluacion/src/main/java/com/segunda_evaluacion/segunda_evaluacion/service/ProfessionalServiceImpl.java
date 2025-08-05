@@ -6,11 +6,17 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 public class ProfessionalServiceImpl implements ProfessionalService{
   private final ProfessionalRepo professionalRepo;
+
+  @Override
+  public Optional<Professional> findProfessionalById(Long id) {
+    return professionalRepo.findById(id);
+  }
 
   @Override
   public List<Professional> getProfessionals(String speciality) {
