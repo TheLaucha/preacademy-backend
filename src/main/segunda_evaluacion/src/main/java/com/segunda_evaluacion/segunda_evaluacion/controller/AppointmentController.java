@@ -9,10 +9,12 @@ import com.segunda_evaluacion.segunda_evaluacion.service.PatientService;
 import com.segunda_evaluacion.segunda_evaluacion.service.ProfessionalService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -59,5 +61,20 @@ public class AppointmentController {
 
     return ResponseEntity.status(HttpStatus.CREATED).body(savedAppointment);
   }
-  
+
+  @GetMapping("/fecha/{fecha}")
+  ResponseEntity<List<Appointment>> getAppointmentsByDate(
+      @PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate fecha){
+
+    List<Appointment> appointments = appointmentService.findByDate(fecha);
+
+    return ResponseEntity.ok(appointments);
+  }
+
+  @DeleteMapping("/{id}")
+  ResponseEntity<Void> deleteById(@PathVariable Long id){
+    appointmentService.deleteAppointment(id);
+
+    return ResponseEntity.noContent().build();
+  }
 }
