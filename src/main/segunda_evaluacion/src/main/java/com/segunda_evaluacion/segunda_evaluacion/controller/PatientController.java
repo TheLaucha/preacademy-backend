@@ -15,7 +15,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/patients")
+@RequestMapping("/pacientes")
 public class PatientController {
   private final PatientService patientService;
 
