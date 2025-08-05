@@ -32,9 +32,9 @@ public class PatientController {
   }
 
   @GetMapping("/{id}")
-  ResponseEntity<Patient> getPatientById(@PathVariable Long patientId){
-    Patient patient =  patientService.getPatientById(patientId)
-        .orElseThrow(() -> new RecursoNoEncontradoException("No se encontro paciente con id: " + patientId));
+  ResponseEntity<Patient> getPatientById(@PathVariable Long id){
+    Patient patient =  patientService.getPatientById(id)
+        .orElseThrow(() -> new RecursoNoEncontradoException("No se encontro paciente con id: " + id));
 
     return ResponseEntity.ok(patient);
   }

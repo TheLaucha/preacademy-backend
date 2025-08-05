@@ -23,5 +23,5 @@ public class Professional {
   private String fullName;
 
   @NotBlank(message = "La especialidad es obligatoria")
-  private String specialty;
+  private String speciality;
 }

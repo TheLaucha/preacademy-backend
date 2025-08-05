@@ -32,7 +32,7 @@ public class ProfessionalController {
   ResponseEntity<Professional> createProfessional(@RequestBody @Valid ProfessionalRequestDTO dto){
     Professional professional = new Professional();
     professional.setFullName(dto.getFullName());
-    professional.setSpecialty(dto.getSpecialty());
+    professional.setSpeciality(dto.getSpeciality());
 
     Professional savedProfessional = professionalService.createProfessional(professional);
 
