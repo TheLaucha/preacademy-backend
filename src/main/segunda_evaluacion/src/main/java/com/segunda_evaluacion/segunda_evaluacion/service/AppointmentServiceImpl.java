@@ -25,6 +25,16 @@ public class AppointmentServiceImpl implements AppointmentService{
 
   @Override
   public Appointment createAppointment(Appointment appointment) {
+    boolean exists = appointmentRepo.existsByPatientAndProfessionalAndDate(
+        appointment.getPatient(),
+        appointment.getProfessional(),
+        appointment.getDate()
+    );
+
+    if (exists){
+      throw new IllegalArgumentException("Ya existe un turno para ese paciente, profesional y fecha");
+    }
+
     return appointmentRepo.save(appointment);
   }
 
