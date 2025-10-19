@@ -1,7 +1,6 @@
 package com.votaciones.api.controller;
 
 import com.votaciones.api.dto.PartidoPoliticoRequestDTO;
-import com.votaciones.api.exception.ResourceNotFoundException;
 import com.votaciones.api.model.PartidoPolitico;
 import com.votaciones.api.service.PartidoPoliticoService;
 import com.votaciones.api.service.VotoService;
@@ -19,7 +18,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/partidos")

@@ -29,6 +29,6 @@ public class CandidatoService {
   public void eliminar(Long id){
     Candidato candidato = candidatoRepo.findById(id)
         .orElseThrow(() -> new ResourceNotFoundException("No se encontro candidato con id: " + id));
-    candidatoRepo.deleteById(id);
+    candidatoRepo.delete(candidato);
   }
 }
