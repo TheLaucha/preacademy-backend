@@ -61,8 +61,7 @@ public class PartidoPoliticoController {
   @GetMapping("/{id}")
   public ResponseEntity<PartidoPolitico> obtenerPorId(
       @Parameter(description = "ID del partido") @PathVariable Long id) {
-    PartidoPolitico partido = partidoService.obtenerPartidoPorId(id)
-        .orElseThrow(() -> new ResourceNotFoundException("No se encontro partido con id: " + id));
+    PartidoPolitico partido = partidoService.obtenerPartidoPorId(id);
     return ResponseEntity.ok(partido);
   }
 
@@ -82,8 +81,7 @@ public class PartidoPoliticoController {
   @GetMapping("/{id}/votos")
   public ResponseEntity<Map<String, Object>> consultarVotos(@PathVariable Long id){
     // Verificar que el partido exista
-    PartidoPolitico partido = partidoService.obtenerPartidoPorId(id)
-        .orElseThrow(() -> new ResourceNotFoundException("No se encontro partido con id: " + id));
+    PartidoPolitico partido = partidoService.obtenerPartidoPorId(id);
 
     // Obtener votos del partido
     Long totalVotos = votoService.contarVotosPorPartido(id);

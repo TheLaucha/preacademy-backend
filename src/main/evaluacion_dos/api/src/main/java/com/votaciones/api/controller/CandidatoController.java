@@ -38,8 +38,7 @@ public class CandidatoController {
   })
   @PostMapping
   public ResponseEntity<Candidato> crear(@Valid @RequestBody CandidatoRequestDTO dto) {
-    PartidoPolitico partido = partidoService.obtenerPartidoPorId(dto.getPartidoId())
-        .orElseThrow(() -> new ResourceNotFoundException("No se encontro partido con id: " + dto.getPartidoId()));
+    PartidoPolitico partido = partidoService.obtenerPartidoPorId(dto.getPartidoId());
 
 
     Candidato candidato = new Candidato();

@@ -22,8 +22,9 @@ public class PartidoPoliticoService {
     return partidoRepo.findAll();
   }
 
-  public Optional<PartidoPolitico> obtenerPartidoPorId(Long id){
-    return partidoRepo.findById(id);
+  public PartidoPolitico obtenerPartidoPorId(Long id){
+    return partidoRepo.findById(id)
+        .orElseThrow(() -> new ResourceNotFoundException("No se encontro partido con id: " + id));
   }
 
   public void eliminar(Long id){
