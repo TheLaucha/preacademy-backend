@@ -100,5 +100,5 @@ public class CandidatoController {
     return ResponseEntity.ok(response);
   }
 
-  
+
 }
