@@ -1,5 +1,6 @@
 package com.votaciones.api.service;
 
+import com.votaciones.api.exception.ResourceNotFoundException;
 import com.votaciones.api.model.PartidoPolitico;
 import com.votaciones.api.repository.PartidoPoliticoRepository;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +27,8 @@ public class PartidoPoliticoService {
   }
 
   public void eliminar(Long id){
-    partidoRepo.deleteById(id);
+    PartidoPolitico partido = partidoRepo.findById(id)
+        .orElseThrow(() -> new ResourceNotFoundException("No existe partido con id: " + id));
+    partidoRepo.delete(partido);
   }
 }
