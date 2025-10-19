@@ -1,5 +1,6 @@
 package com.votaciones.api.service;
 
+import com.votaciones.api.exception.ResourceNotFoundException;
 import com.votaciones.api.model.Candidato;
 import com.votaciones.api.repository.CandidatoRepository;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +27,8 @@ public class CandidatoService {
   }
 
   public void eliminar(Long id){
+    Candidato candidato = candidatoRepo.findById(id)
+        .orElseThrow(() -> new ResourceNotFoundException("No se encontro candidato con id: " + id));
     candidatoRepo.deleteById(id);
   }
 }
