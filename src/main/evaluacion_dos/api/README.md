@@ -27,7 +27,6 @@ Endpoints útiles:
 
 ## Datos de prueba (paso a paso)
 
-A continuación te dejo un flujo mínimo para probar todo desde Postman o curl.
 
 1. Crear un partido
 
